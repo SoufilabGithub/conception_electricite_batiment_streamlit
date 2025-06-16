@@ -1,4 +1,19 @@
 import streamlit as st
+
+# 🔒 Lire le mot de passe depuis secrets.toml
+PASSWORD = st.secrets["general"]["password"]
+
+# 🌐 Authentification simple
+user_input = st.text_input("Entrez le mot de passe :", type="password")
+
+if user_input == PASSWORD:
+    st.success("✅ Accès autorisé")
+    # 👉 Affiche ici le reste de ton app
+else:
+    st.warning("🔐 Entrez le mot de passe pour accéder à l'application")
+    st.stop()
+
+import streamlit as st
 import importlib
 
 st.set_page_config(page_title="Conception Électrique", layout="wide")
