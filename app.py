@@ -1,4 +1,8 @@
+
 import streamlit as st
+import importlib
+
+st.set_page_config(page_title="Conception Électrique", layout="wide")
 
 # 🔒 Lire le mot de passe depuis secrets.toml
 PASSWORD = st.secrets["general"]["password"]
@@ -13,10 +17,7 @@ else:
     st.warning("🔐 Entrez le mot de passe pour accéder à l'application")
     st.stop()
 
-import streamlit as st
-import importlib
 
-st.set_page_config(page_title="Conception Électrique", layout="wide")
 st.title("⚡ Conception Électrique du Bâtiment")
 
 st.sidebar.markdown("## 📁 Sections disponibles")
